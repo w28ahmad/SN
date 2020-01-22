@@ -15,26 +15,15 @@ int main(){
 
 // Creating and printing an adjacency matrix
 	matrix = generate_matrix(matrix, stoi(size));
-//	cout << " Adjacency Matrix " <<endl;
-//	print_matrix(matrix, stoi(size));
-//	cout<< "--------------------------------------" <<endl;
 
 // Creating and printing reflexive matrix
 	matrix = reflexive_closure(matrix, stoi(size));
-//	cout<< " Reflexive Matrix " <<endl;
-//	print_matrix(matrix, stoi(size));
-//	cout<< "--------------------------------------" <<endl;
 
 // Creating and printing trasitive matrix
-//	cout<< "Transitive Matrix " << endl;
 	matrix = trasitive_closure(matrix, stoi(size));
-//	print_matrix(matrix, stoi(size));
-//	cout<< "-------------------------------------" << endl;
 	
 // Finding the Equivalence Classes
-//	cout<< "Equivalence Classes" << endl;
 	test_symmetric_closure(matrix, stoi(size));
-		
 	delete[] matrix;
 	return 0;
 }
@@ -66,11 +55,9 @@ void test_symmetric_closure(bool**& matrix,int size){
 		}
 	}
 
-//  This shows what the eq_matrix looks like
-//	print_matrix(eq_class, size, row_size);
-
 /*
- * This next section is going to use the eq_class to find all the rows that are all ones and then find the corresponding id
+ * This next section is going to use the eq_class to find all the rows that are all ones and 
+ * then find the corresponding id
  */
 	current_row = 0;
 	int section_count = 0;
@@ -120,8 +107,7 @@ void test_symmetric_closure(bool**& matrix,int size){
 }
 
 bool** trasitive_closure(bool**& matrix, int size){
-//implementing Warshall's Algorithm
-	
+//implementing Warshall's Algorithm	
 	for(int adj = 0; adj < size; adj++){
 		for(int row = 0; row < size; row++){
 			for(int col = 0; col < size; col++){
